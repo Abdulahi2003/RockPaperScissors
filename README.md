@@ -1,1 +1,1 @@
-# RockPaperScissors
+Create a game of rock, paper, scissors using my knowledge of javascript.
