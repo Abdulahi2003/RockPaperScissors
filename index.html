@@ -27,8 +27,10 @@
             } else if (humanChoice == "rock" && computerChoice == "scissors" || 
             humanChoice == "scissors" && computerChoice == "paper" ||
             humanChoice == "paper" && computerChoice == "rock"){
+                humanScore++;
                 return ("You win " + humanChoice + " beats " + computerChoice)
             } else {
+                computerScore++;
                 return ("You lose " + computerChoice + " beats " + humanChoice) 
             }
         }
@@ -36,6 +38,8 @@
         const computerSelection = getComputerChoice();
 
         console.log(playRound(humanSelection, computerSelection));
+
+        
     </script>
 </body>
 </html>
