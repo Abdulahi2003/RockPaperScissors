@@ -25,23 +25,27 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-    
-        playRound(humanSelection,computerSelection);
-    }    
-        console.log("Final Scores: ")
-        console.log("My score: " + humanScore);
-        console.log("Computer score: " + computerScore);
+function playGame() {    
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            playerSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
+        })
+    });
 
-        if (humanScore > computerScore) {
-            console.log("You won!");
-        } else if (humanScore < computerScore) {
-            console.log("You lost!")
-        } else {
-            console.log("You tied")
-        }
+    const content = document.createElement("div");
+    
+    console.log("Final Scores: ")
+    console.log("My score: " + humanScore);
+    console.log("Computer score: " + computerScore);
+
+    if (humanScore > computerScore) {
+        console.log("You won!");
+    } else if (humanScore < computerScore) {
+        console.log("You lost!")
+    } else {
+        console.log("You tied")
+    }
 }
 playGame();
